@@ -1,10 +1,5 @@
 import { NavItem } from '@/types';
 
-
-
-
-
-
 // @/constants/data.ts
 export interface PaymentButton {
   id: string;
@@ -22,7 +17,6 @@ export interface PaymentButton {
   reference?: string;
   metadata?: Record<string, any>;
 }
-
 
 export type Product = {
   photo_url: string;
@@ -170,66 +164,66 @@ export interface CreateWithdrawalPayload {
 
 //Info: The following data is used for the sidebar navigation and Cmd K bar.
 export const navItems: NavItem[] = [
-  {
-    title: 'Começar',
-    url: '/apps/123/dashboard/get-started',
-    icon: 'rocket',
-    isActive: false,
-    shortcut: ['c', 'c'],
-    items: []
-  },
+  // {
+  //   title: 'Começar',
+  //   url: '/dashboard/get-started',
+  //   icon: 'rocket',
+  //   isActive: false,
+  //   shortcut: ['c', 'c'],
+  //   items: []
+  // },
   {
     title: 'Dashboard',
-    url: '/apps/123/dashboard/overview',
+    url: '/dashboard/overview',
     icon: 'dashboard',
     isActive: false,
     shortcut: ['d', 'd'],
     items: []
   },
 
-  {
-    title: 'Integração',
-    url: '/apps/123/dashboard/integration',
-    icon: 'plug',
-    isActive: false,
-    shortcut: ['i', 'i'],
-    items: []
-  },
+  // {
+  //   title: 'Integração',
+  //   url: '/dashboard/integration',
+  //   icon: 'plug',
+  //   isActive: false,
+  //   shortcut: ['i', 'i'],
+  //   items: []
+  // },
   {
     title: 'Transações',
-    url: '/apps/123/dashboard/transactions',
+    url: '/dashboard/transactions',
     icon: 'post',
     isActive: false,
     shortcut: ['i', 'i'],
     items: [
       {
         title: 'Geral',
-        url: '/apps/123/dashboard/transactions/overview',
+        url: '/dashboard/transactions/overview',
         icon: 'sliders'
       },
-   {
+      {
         title: 'Botões',
-        url: '/apps/123/dashboard/transactions/buttons',
+        url: '/dashboard/transactions/buttons',
         icon: 'mousePointer'
       },
       {
         title: 'Faturas',
-        url: '/apps/123/dashboard/transactions/invoices',
+        url: '/dashboard/transactions/invoices',
         icon: 'settings'
       },
       {
         title: 'Links de Pagamentos',
-        url: '/apps/123/dashboard/transactions/payment-links',
+        url: '/dashboard/transactions/payment-links',
         icon: 'settings'
       },
       {
         title: 'Assinaturas',
-        url: '/apps/123/dashboard/transactions/subscriptions',
+        url: '/dashboard/transactions/subscriptions',
         icon: 'settings'
       },
       {
         title: 'Pagamento Manual',
-        url: '/apps/123/dashboard/transactions/payments',
+        url: '/dashboard/transactions/payments',
         icon: 'settings'
       }
     ]
@@ -242,7 +236,7 @@ export const navItems: NavItem[] = [
     items: [
       {
         title: 'Geral',
-        url: '/apps/123/dashboard/finance/overview',
+        url: '/dashboard/finance/overview',
         icon: 'dollarSign',
         isActive: false,
         shortcut: ['d', 'd'],
@@ -250,12 +244,12 @@ export const navItems: NavItem[] = [
       },
       {
         title: 'Saldo & Saques',
-        url: '/apps/123/dashboard/finance/wallet',
+        url: '/dashboard/finance/wallet',
         icon: 'wallet'
       },
       {
         title: 'Reembolsos',
-        url: '/apps/123/dashboard/finance/refunds',
+        url: '/dashboard/finance/refunds',
         icon: 'refreshCw'
       }
     ]
@@ -268,12 +262,12 @@ export const navItems: NavItem[] = [
     items: [
       {
         title: 'Personalizar Checkout',
-        url: '/apps/123/dashboard/checkout/customize',
+        url: '/dashboard/checkout/customize',
         icon: 'sliders'
       },
       {
         title: 'Configurações',
-        url: '/apps/123/dashboard/checkout/settings',
+        url: '/dashboard/checkout/settings',
         icon: 'settings'
       }
     ]
@@ -284,21 +278,19 @@ export const navItems: NavItem[] = [
     icon: 'smartphone',
     isActive: false,
     items: [
- 
-    
       {
         title: 'Credenciais Shopify',
-        url: '/apps/123/dashboard/credentials/shopify-credentials',
+        url: '/dashboard/credentials/shopify-credentials',
         icon: 'mousePointer'
       },
       {
         title: 'Credenciais WooCommerce',
-        url: '/apps/123/dashboard/credentials/buttons',
+        url: '/dashboard/credentials/buttons',
         icon: 'mousePointer'
       },
       {
         title: 'Credenciais Wix',
-        url: '/apps/123/dashboard/credentials/buttons',
+        url: '/dashboard/credentials/buttons',
         icon: 'mousePointer'
       }
     ]
@@ -306,7 +298,7 @@ export const navItems: NavItem[] = [
 
   {
     title: 'Análises',
-    url: '/apps/123/dashboard/analytics',
+    url: '/dashboard/analytics',
     icon: 'barChart',
     isActive: false,
     shortcut: ['a', 'a'],
@@ -314,13 +306,13 @@ export const navItems: NavItem[] = [
   },
   {
     title: 'Marketing',
-    url: '/apps/123/dashboard/marketing',
+    url: '/dashboard/marketing',
     icon: 'megaphone',
     isActive: false,
     shortcut: ['m', 'm'],
     items: []
   },
-    {
+  {
     title: 'Aplicação',
     url: '#',
     icon: 'apps',
@@ -330,7 +322,9 @@ export const navItems: NavItem[] = [
         title: 'Configurações',
         url: '/apps/123',
         icon: 'shield'
-      }]},
+      }
+    ]
+  },
   {
     title: 'Configurações',
     url: '#',
@@ -339,17 +333,17 @@ export const navItems: NavItem[] = [
     items: [
       {
         title: 'Privacidade',
-        url: '/apps/123/dashboard/settings/privacy',
+        url: '/dashboard/settings/privacy',
         icon: 'shield'
       },
       {
         title: 'Termos e Condições',
-        url: '/apps/123/dashboard/settings/terms',
+        url: '/dashboard/settings/terms',
         icon: 'fileText'
       },
       {
         title: 'Configurações Gerais',
-        url: '/apps/123/dashboard/settings/general',
+        url: '/dashboard/settings/general',
         icon: 'settings'
       }
     ]
@@ -362,7 +356,7 @@ export const navItems: NavItem[] = [
     items: [
       {
         title: 'Perfil',
-        url: '/apps/123/dashboard/account/profile',
+        url: '/dashboard/account/profile',
         icon: 'userPen'
       },
       {

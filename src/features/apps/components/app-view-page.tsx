@@ -76,7 +76,7 @@ function AppCard({ app }: { app: App }) {
 
         <div className='mt-4 flex justify-end'>
           <Button variant='outline' size='sm' className='text-sm' asChild>
-            <Link href={`/apps/123/dashboard`} className='flex items-center'>
+            <Link href={`/dashboard`} className='flex items-center'>
               Ir para aplicação
               <IconArrowRight className='ml-1 h-3 w-3' />
             </Link>

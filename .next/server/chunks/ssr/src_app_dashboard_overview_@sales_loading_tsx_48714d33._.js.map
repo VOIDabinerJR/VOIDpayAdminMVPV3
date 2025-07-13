@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/mac/Documents/GitHub/VOIDpayAdminMVPV3/src/app/dashboard/overview/%40sales/loading.tsx"],"sourcesContent":["import { RecentSalesSkeleton } from '@/features/overview/components/recent-sales-skeleton';\nimport React from 'react';\n\nexport default function Loading() {\n  return <RecentSalesSkeleton />;\n}\n"],"names":[],"mappings":";;;;AAAA;;;AAGe,SAAS;IACtB,qBAAO,8OAAC,yKAAA,CAAA,sBAAmB;;;;;AAC7B","debugId":null}}]
+}
