@@ -47,7 +47,14 @@ import {
   IconShield,
   IconLogout,
   IconAdjustments,
-  IconPaperclip // Para "Personalizar"
+  IconPaperclip, // Para "Personalizar"
+  // Novos ícones necessários:
+  IconEye,
+  IconExchange,
+  IconUsers,
+  IconActivity,
+  IconLink,
+  IconList
 } from '@tabler/icons-react';
 
 export type Icon = React.ComponentType<IconProps>;
@@ -101,5 +108,12 @@ export const Icons = {
   barChart: IconChartBar, // Análises
   megaphone: IconSpeakerphone, // Marketing
   shield: IconShield, // Privacidade
-  logOut: IconLogout // Sair (nome oficial)
+  logOut: IconLogout, // Sair (nome oficial)
+  // Novos ícones adicionados:
+  eye: IconEye, // Visão Geral
+  exchange: IconExchange, // Transações
+  users: IconUsers, // Gestão de Usuários
+  activity: IconActivity, // Atividade de Usuários
+  link: IconLink, // Links de Pagamento
+  list: IconList // Todos os Links
 };
