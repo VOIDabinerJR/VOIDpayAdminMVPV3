@@ -225,7 +225,7 @@ export const navItems: NavItem[] = [
       {
         title: 'Logs de Login',
         url: '/dashboard/security/login-logs',
-        icon: 'logIn',
+        icon: 'login',
         isActive: false
       }
     ]
