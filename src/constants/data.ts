@@ -313,6 +313,14 @@ export const navItems: NavItem[] = [
     items: []
   },
   {
+    title: 'Usuarios',
+    url: '/dashboard/users',
+    icon: 'megaphone',
+    isActive: false,
+    shortcut: ['m', 'm'],
+    items: []
+  },
+  {
     title: 'Aplicação',
     url: '#',
     icon: 'apps',

@@ -18,28 +18,36 @@ import {
   IconActivity,
   IconShoppingCart,
   IconCoin,
-  IconCalendarStats
+  IconCalendarStats,
+  IconShield,
+  IconBuildingBank,
+  IconUserCheck,
+  IconUserX,
+  IconAlertCircle,
+  IconLock,
+  IconSettings,
+  IconChartBar,
+  IconListDetails
 } from '@tabler/icons-react';
 import React from 'react';
 
-export default function OverViewLayout({
-  sales,
-  pie_stats,
-  bar_stats,
-  area_stats,
-  last_payments
+export default function SuperAdminOverViewLayout({
+  adminStats,
+  gatewayStats,
+  activityLog,
+  recentAdmins,
+  suspiciousActivity
 }: {
-  sales: React.ReactNode;
-  pie_stats: React.ReactNode;
-  bar_stats: React.ReactNode;
-  area_stats: React.ReactNode;
-  last_payments: React.ReactNode;
+  adminStats: React.ReactNode;
+  gatewayStats: React.ReactNode;
+  activityLog: React.ReactNode;
+  recentAdmins: React.ReactNode;
+  suspiciousActivity: React.ReactNode;
 }) {
-  // Simulando dados do usuário (substitua pelos dados reais)
-  const userName = 'Abiner Maleiane';
+  const userName = 'SuperAdmin VoidPay';
   const notifications = [
-    { id: 1, text: 'Novo pedido recebido', time: '10 min atrás' },
-    { id: 2, text: 'Pagamento confirmado', time: '1 hora atrás' }
+    { id: 1, text: 'Novo administrador cadastrado', time: '15 min atrás' },
+    { id: 2, text: 'Alteração crítica de configuração', time: '2 horas atrás' }
   ];
 
   return (
@@ -49,38 +57,44 @@ export default function OverViewLayout({
         <div className='flex items-center justify-between'>
           <div>
             <h2 className='text-2xl font-bold tracking-tight'>
-              Olá, {userName} 👋
+              Painel de Controle, {userName} 
             </h2>
             <p className='text-muted-foreground'>
-              Aqui está o resumo da sua plataforma
+              Visão geral da plataforma e administradores
             </p>
+          </div>
+          <div className='flex items-center gap-2'>
+            <button className='relative rounded-full p-2 hover:bg-gray-100'>
+              <IconBell className='text-primary' />
+              <span className='absolute right-0 top-0 h-2 w-2 rounded-full bg-red-500'></span>
+            </button>
           </div>
         </div>
 
-        {/* Estatísticas principais */}
+        {/* Estatísticas principais - Foco em Administradores */}
         <div className='*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs md:grid-cols-2 lg:grid-cols-4'>
           <Card className='@container/card'>
             <CardHeader>
               <div className='flex items-center gap-2'>
-                <IconUsers className='text-primary' />
-                <CardDescription>Total de Usuários</CardDescription>
+                <IconShield className='text-primary' />
+                <CardDescription>Administradores Totais</CardDescription>
               </div>
               <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                1,248
+                48
               </CardTitle>
               <CardAction>
                 <Badge variant='outline'>
                   <IconTrendingUp />
-                  +12.3%
+                  +8.3%
                 </Badge>
               </CardAction>
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                Novos usuários este mês <IconTrendingUp className='size-4' />
+                Novos administradores <IconTrendingUp className='size-4' />
               </div>
               <div className='text-muted-foreground'>
-                142 novos usuários registrados
+                4 novos este mês
               </div>
             </CardFooter>
           </Card>
@@ -88,116 +102,11 @@ export default function OverViewLayout({
           <Card className='@container/card'>
             <CardHeader>
               <div className='flex items-center gap-2'>
-                <IconSubscript className='text-primary' />
-                <CardDescription>Assinantes Ativos</CardDescription>
+                <IconBuildingBank className='text-primary' />
+                <CardDescription>Gateways Ativos</CardDescription>
               </div>
               <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                856
-              </CardTitle>
-              <CardAction>
-                <Badge variant='outline'>
-                  <IconTrendingUp />
-                  +5.7%
-                </Badge>
-              </CardAction>
-            </CardHeader>
-            <CardFooter className='flex-col items-start gap-1.5 text-sm'>
-              <div className='line-clamp-1 flex gap-2 font-medium'>
-                Crescimento de assinaturas <IconTrendingUp className='size-4' />
-              </div>
-              <div className='text-muted-foreground'>
-                48 novas assinaturas este mês
-              </div>
-            </CardFooter>
-          </Card>
-
-          <Card className='@container/card'>
-            <CardHeader>
-              <div className='flex items-center gap-2'>
-                <IconActivity className='text-primary' />
-                <CardDescription>Atividade Recente</CardDescription>
-              </div>
-              <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                324
-              </CardTitle>
-              <CardAction>
-                <Badge variant='outline'>
-                  <IconTrendingUp />
-                  +18.2%
-                </Badge>
-              </CardAction>
-            </CardHeader>
-            <CardFooter className='flex-col items-start gap-1.5 text-sm'>
-              <div className='line-clamp-1 flex gap-2 font-medium'>
-                Ações na plataforma <IconTrendingUp className='size-4' />
-              </div>
-              <div className='text-muted-foreground'>Últimas 24 horas</div>
-            </CardFooter>
-          </Card>
-
-          <Card className='@container/card'>
-            <CardHeader>
-              <div className='flex items-center gap-2'>
-                <IconShoppingCart className='text-primary' />
-                <CardDescription>Pedidos Hoje</CardDescription>
-              </div>
-              <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                42
-              </CardTitle>
-              <CardAction>
-                <Badge variant='outline'>
-                  <IconTrendingDown />
-                  -3.4%
-                </Badge>
-              </CardAction>
-            </CardHeader>
-            <CardFooter className='flex-col items-start gap-1.5 text-sm'>
-              <div className='line-clamp-1 flex gap-2 font-medium'>
-                Comparado com ontem <IconTrendingDown className='size-4' />
-              </div>
-              <div className='text-muted-foreground'>
-                Total de R$ 8,540 em vendas
-              </div>
-            </CardFooter>
-          </Card>
-        </div>
-
-        {/* Segunda linha de estatísticas */}
-        <div className='*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs md:grid-cols-2 lg:grid-cols-4'>
-          <Card className='@container/card'>
-            <CardHeader>
-              <div className='flex items-center gap-2'>
-                <IconCoin className='text-primary' />
-                <CardDescription>Receita Mensal</CardDescription>
-              </div>
-              <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                R$ 25,480
-              </CardTitle>
-              <CardAction>
-                <Badge variant='outline'>
-                  <IconTrendingUp />
-                  +8.5%
-                </Badge>
-              </CardAction>
-            </CardHeader>
-            <CardFooter className='flex-col items-start gap-1.5 text-sm'>
-              <div className='line-clamp-1 flex gap-2 font-medium'>
-                Meta mensal: R$ 30,000 (85%)
-              </div>
-              <div className='text-muted-foreground'>
-                Comparado ao mês anterior
-              </div>
-            </CardFooter>
-          </Card>
-
-          <Card className='@container/card'>
-            <CardHeader>
-              <div className='flex items-center gap-2'>
-                <IconCalendarStats className='text-primary' />
-                <CardDescription>Retenção Mensal</CardDescription>
-              </div>
-              <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                78.5%
+                12
               </CardTitle>
               <CardAction>
                 <Badge variant='outline'>
@@ -208,10 +117,10 @@ export default function OverViewLayout({
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                Taxa de retenção <IconTrendingUp className='size-4' />
+                Gateways configurados <IconTrendingUp className='size-4' />
               </div>
               <div className='text-muted-foreground'>
-                Melhor que a média do setor
+                1 novo gateway este mês
               </div>
             </CardFooter>
           </Card>
@@ -219,49 +128,154 @@ export default function OverViewLayout({
           <Card className='@container/card'>
             <CardHeader>
               <div className='flex items-center gap-2'>
-                <IconSubscript className='text-primary' />
-                <CardDescription>Assinaturas Canceladas</CardDescription>
+                <IconUserCheck className='text-primary' />
+                <CardDescription>Admins Ativos</CardDescription>
               </div>
               <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                24
+                42
               </CardTitle>
               <CardAction>
                 <Badge variant='outline'>
-                  <IconTrendingDown />
-                  -15%
+                  <IconTrendingUp />
+                  +5.0%
                 </Badge>
               </CardAction>
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                Redução em cancelamentos <IconTrendingDown className='size-4' />
+                Atividade recente <IconTrendingUp className='size-4' />
               </div>
-              <div className='text-muted-foreground'>Taxa de churn: 2.8%</div>
+              <div className='text-muted-foreground'>Últimas 24 horas</div>
             </CardFooter>
           </Card>
 
           <Card className='@container/card'>
             <CardHeader>
               <div className='flex items-center gap-2'>
-                <IconUsers className='text-primary' />
-                <CardDescription>Usuários Inativos</CardDescription>
+                <IconUserX className='text-primary' />
+                <CardDescription>Admins Suspensos</CardDescription>
               </div>
               <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                192
+                3
               </CardTitle>
               <CardAction>
                 <Badge variant='outline'>
                   <IconTrendingDown />
-                  -7.2%
+                  -25%
                 </Badge>
               </CardAction>
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                Últimos 30 dias <IconTrendingDown className='size-4' />
+                Comparado ao mês passado <IconTrendingDown className='size-4' />
               </div>
               <div className='text-muted-foreground'>
-                Campanhas de reativação em andamento
+                1 suspensão este mês
+              </div>
+            </CardFooter>
+          </Card>
+        </div>
+
+        {/* Segunda linha de estatísticas - Segurança e Configurações */}
+        <div className='*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs md:grid-cols-2 lg:grid-cols-4'>
+          <Card className='@container/card'>
+            <CardHeader>
+              <div className='flex items-center gap-2'>
+                <IconLock className='text-primary' />
+                <CardDescription>Autenticação 2FA</CardDescription>
+              </div>
+              <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
+                92%
+              </CardTitle>
+              <CardAction>
+                <Badge variant='outline'>
+                  <IconTrendingUp />
+                  +7.2%
+                </Badge>
+              </CardAction>
+            </CardHeader>
+            <CardFooter className='flex-col items-start gap-1.5 text-sm'>
+              <div className='line-clamp-1 flex gap-2 font-medium'>
+                Adoção de segurança <IconTrendingUp className='size-4' />
+              </div>
+              <div className='text-muted-foreground'>
+                4 admins sem 2FA ativado
+              </div>
+            </CardFooter>
+          </Card>
+
+          <Card className='@container/card'>
+            <CardHeader>
+              <div className='flex items-center gap-2'>
+                <IconAlertCircle className='text-primary' />
+                <CardDescription>Alertas de Segurança</CardDescription>
+              </div>
+              <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
+                5
+              </CardTitle>
+              <CardAction>
+                <Badge variant='outline' className='bg-red-100 text-red-800'>
+                  <IconTrendingUp />
+                  +66%
+                </Badge>
+              </CardAction>
+            </CardHeader>
+            <CardFooter className='flex-col items-start gap-1.5 text-sm'>
+              <div className='line-clamp-1 flex gap-2 font-medium text-red-600'>
+                Necessidade de atenção <IconTrendingUp className='size-4' />
+              </div>
+              <div className='text-muted-foreground'>
+                3 críticos, 2 avisos
+              </div>
+            </CardFooter>
+          </Card>
+
+          <Card className='@container/card'>
+            <CardHeader>
+              <div className='flex items-center gap-2'>
+                <IconSettings className='text-primary' />
+                <CardDescription>Configurações Alteradas</CardDescription>
+              </div>
+              <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
+                28
+              </CardTitle>
+              <CardAction>
+                <Badge variant='outline'>
+                  <IconTrendingDown />
+                  -12%
+                </Badge>
+              </CardAction>
+            </CardHeader>
+            <CardFooter className='flex-col items-start gap-1.5 text-sm'>
+              <div className='line-clamp-1 flex gap-2 font-medium'>
+                Este mês <IconTrendingDown className='size-4' />
+              </div>
+              <div className='text-muted-foreground'>5 alterações críticas</div>
+            </CardFooter>
+          </Card>
+
+          <Card className='@container/card'>
+            <CardHeader>
+              <div className='flex items-center gap-2'>
+                <IconActivity className='text-primary' />
+                <CardDescription>Logs de Auditoria</CardDescription>
+              </div>
+              <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
+                1,428
+              </CardTitle>
+              <CardAction>
+                <Badge variant='outline'>
+                  <IconTrendingUp />
+                  +22.7%
+                </Badge>
+              </CardAction>
+            </CardHeader>
+            <CardFooter className='flex-col items-start gap-1.5 text-sm'>
+              <div className='line-clamp-1 flex gap-2 font-medium'>
+                Últimos 7 dias <IconTrendingUp className='size-4' />
+              </div>
+              <div className='text-muted-foreground'>
+                Média de 204 logs/dia
               </div>
             </CardFooter>
           </Card>
@@ -272,74 +286,140 @@ export default function OverViewLayout({
           <div className='col-span-4'>
             <Card>
               <CardHeader>
-                <CardTitle>Visão Geral dos Ganhos</CardTitle>
+                <CardTitle className='flex items-center gap-2'>
+                  <IconChartBar className='text-primary' />
+                  Atividade dos Administradores
+                </CardTitle>
+                <CardDescription>Ações realizadas nos últimos 30 dias</CardDescription>
               </CardHeader>
-              {bar_stats}
+              {adminStats}
             </Card>
           </div>
 
           <div className='col-span-4 md:col-span-3'>
             <Card>
               <CardHeader>
-                <CardTitle>Distribuição de Usuários</CardTitle>
-                <CardDescription>Por tipo de assinatura</CardDescription>
+                <CardTitle className='flex items-center gap-2'>
+                  <IconBuildingBank className='text-primary' />
+                  Status dos Gateways
+                </CardTitle>
+                <CardDescription>Distribuição por status e tipo</CardDescription>
               </CardHeader>
-              {pie_stats}
+              {gatewayStats}
             </Card>
           </div>
 
           <div className='col-span-4'>
             <Card>
               <CardHeader>
-                <CardTitle>Histórico de Atividades</CardTitle>
-                <CardDescription>Últimos 30 dias</CardDescription>
+                <CardTitle className='flex items-center gap-2'>
+                  <IconListDetails className='text-primary' />
+                  Log de Atividades Recentes
+                </CardTitle>
+                <CardDescription>Últimas ações críticas</CardDescription>
               </CardHeader>
-              {area_stats}
+              {activityLog}
             </Card>
           </div>
 
           <div className='col-span-4 md:col-span-3'>
             <Card>
               <CardHeader>
-                <CardTitle>Transações Recentes</CardTitle>
-                <CardDescription>Últimos 15 pedidos</CardDescription>
+                <CardTitle className='flex items-center gap-2'>
+                  <IconUsers className='text-primary' />
+                  Novos Administradores
+                </CardTitle>
+                <CardDescription>Cadastrados nos últimos 15 dias</CardDescription>
               </CardHeader>
-              {sales}
+              {recentAdmins}
             </Card>
           </div>
         </div>
 
-        {last_payments}
+        {suspiciousActivity}
 
         {/* Área de informações úteis */}
         <Card className='mt-4'>
           <CardHeader>
             <CardTitle className='flex items-center gap-2'>
-              <IconInfoCircle className='size-5' /> Insights e Ações
+              <IconInfoCircle className='size-5' /> Insights e Ações Prioritárias
             </CardTitle>
           </CardHeader>
           <div className='grid grid-cols-1 gap-4 px-6 pb-4 md:grid-cols-2 lg:grid-cols-3'>
             <div className='rounded-lg border p-4'>
-              <h3 className='mb-2 font-medium'>Oportunidades</h3>
+              <h3 className='mb-2 flex items-center gap-2 font-medium'>
+                <IconAlertCircle className='text-yellow-600' /> Alertas de Segurança
+              </h3>
               <p className='text-muted-foreground text-sm'>
-                342 usuários inativos podem ser reativados com campanhas
-                direcionadas.
+                3 administradores com permissões elevadas sem 2FA ativado. Recomendado revisão imediata.
               </p>
             </div>
             <div className='rounded-lg border p-4'>
-              <h3 className='mb-2 font-medium'>Alertas</h3>
+              <h3 className='mb-2 flex items-center gap-2 font-medium'>
+                <IconUserX className='text-red-600' /> Suspensões Pendentes
+              </h3>
               <p className='text-muted-foreground text-sm'>
-                5 assinaturas irão vencer nos próximos 3 dias. Enviar lembretes.
+                1 administrador com múltiplas tentativas de acesso falhas. Ação recomendada: suspensão temporária.
               </p>
             </div>
             <div className='rounded-lg border p-4'>
-              <h3 className='mb-2 font-medium'>Desempenho</h3>
+              <h3 className='mb-2 flex items-center gap-2 font-medium'>
+                <IconSettings className='text-blue-600' /> Atualizações Pendentes
+              </h3>
               <p className='text-muted-foreground text-sm'>
-                Sua taxa de conversão está 12% acima da média do setor.
+                Nova versão do painel de controle disponível (v2.3.1). Contém correções críticas de segurança.
               </p>
             </div>
           </div>
         </Card>
+
+        {/* Ações rápidas */}
+        <div className='grid grid-cols-1 gap-4 md:grid-cols-4'>
+          <Card className='hover:border-primary hover:shadow-md transition-all cursor-pointer'>
+            <CardHeader className='flex flex-row items-center gap-4'>
+              <div className='bg-primary/10 p-3 rounded-full'>
+                <IconUserCheck className='text-primary' />
+              </div>
+              <div>
+                <CardTitle className='text-lg'>Aprovar Novos Admins</CardTitle>
+                <CardDescription>3 solicitações pendentes</CardDescription>
+              </div>
+            </CardHeader>
+          </Card>
+          <Card className='hover:border-primary hover:shadow-md transition-all cursor-pointer'>
+            <CardHeader className='flex flex-row items-center gap-4'>
+              <div className='bg-primary/10 p-3 rounded-full'>
+                <IconLock className='text-primary' />
+              </div>
+              <div>
+                <CardTitle className='text-lg'>Auditar Permissões</CardTitle>
+                <CardDescription>5 admins com permissões excessivas</CardDescription>
+              </div>
+            </CardHeader>
+          </Card>
+          <Card className='hover:border-primary hover:shadow-md transition-all cursor-pointer'>
+            <CardHeader className='flex flex-row items-center gap-4'>
+              <div className='bg-primary/10 p-3 rounded-full'>
+                <IconAlertCircle className='text-primary' />
+              </div>
+              <div>
+                <CardTitle className='text-lg'>Resolver Alertas</CardTitle>
+                <CardDescription>5 alertas não resolvidos</CardDescription>
+              </div>
+            </CardHeader>
+          </Card>
+          <Card className='hover:border-primary hover:shadow-md transition-all cursor-pointer'>
+            <CardHeader className='flex flex-row items-center gap-4'>
+              <div className='bg-primary/10 p-3 rounded-full'>
+                <IconSettings className='text-primary' />
+              </div>
+              <div>
+                <CardTitle className='text-lg'>Atualizar Sistema</CardTitle>
+                <CardDescription>1 atualização disponível</CardDescription>
+              </div>
+            </CardHeader>
+          </Card>
+        </div>
       </div>
     </PageContainer>
   );
