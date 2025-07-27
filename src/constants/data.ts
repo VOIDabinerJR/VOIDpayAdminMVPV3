@@ -164,215 +164,98 @@ export interface CreateWithdrawalPayload {
 
 //Info: The following data is used for the sidebar navigation and Cmd K bar.
 export const navItems: NavItem[] = [
-  // {
-  //   title: 'Começar',
-  //   url: '/dashboard/get-started',
-  //   icon: 'rocket',
-  //   isActive: false,
-  //   shortcut: ['c', 'c'],
-  //   items: []
-  // },
   {
-    title: 'Dashboard',
-    url: '/dashboard/overview',
-    icon: 'dashboard',
-    isActive: false,
-    shortcut: ['d', 'd'],
-    items: []
-  },
-
-  // {
-  //   title: 'Integração',
-  //   url: '/dashboard/integration',
-  //   icon: 'plug',
-  //   isActive: false,
-  //   shortcut: ['i', 'i'],
-  //   items: []
-  // },
-  {
-    title: 'Transações',
-    url: '/dashboard/transactions',
-    icon: 'post',
-    isActive: false,
-    shortcut: ['i', 'i'],
-    items: [
-      {
-        title: 'Geral',
-        url: '/dashboard/transactions/overview',
-        icon: 'sliders'
-      },
-      {
-        title: 'Botões',
-        url: '/dashboard/transactions/buttons',
-        icon: 'mousePointer'
-      },
-      {
-        title: 'Faturas',
-        url: '/dashboard/transactions/invoices',
-        icon: 'settings'
-      },
-      {
-        title: 'Links de Pagamentos',
-        url: '/dashboard/transactions/payment-links',
-        icon: 'settings'
-      },
-      {
-        title: 'Assinaturas',
-        url: '/dashboard/transactions/subscriptions',
-        icon: 'settings'
-      },
-      {
-        title: 'Pagamento Manual',
-        url: '/dashboard/transactions/payments',
-        icon: 'settings'
-      }
-    ]
-  },
-  {
-    title: 'Financeiro',
+    title: 'Gestão de Carteira',
     url: '#',
-    icon: 'dollarSign',
+    icon: 'wallet',
     isActive: false,
     items: [
       {
-        title: 'Geral',
-        url: '/dashboard/finance/overview',
+        title: 'Visão Geral',
+        url: '/dashboard/wallet/overview',
+        icon: 'eye',
+        isActive: false
+      },
+      {
+        title: 'Transações',
+        url: '/dashboard/wallet/transactions',
+        icon: 'exchange',
+        isActive: true
+      },
+      {
+        title: 'Saques',
+        url: '/dashboard/wallet/withdrawals',
         icon: 'dollarSign',
-        isActive: false,
-        shortcut: ['d', 'd'],
-        items: []
-      },
-      {
-        title: 'Saldo & Saques',
-        url: '/dashboard/finance/wallet',
-        icon: 'wallet'
-      },
-      {
-        title: 'Reembolsos',
-        url: '/dashboard/finance/refunds',
-        icon: 'refreshCw'
+        isActive: false
       }
     ]
   },
   {
-    title: 'Checkout',
+    title: 'Gestão de Usuários',
     url: '#',
-    icon: 'shoppingCart',
+    icon: 'users',
     isActive: false,
     items: [
       {
-        title: 'Personalizar Checkout',
-        url: '/dashboard/checkout/customize',
-        icon: 'sliders'
+        title: 'Todos os Usuários',
+        url: '/dashboard/users/all',
+        icon: 'user',
+        isActive: true
       },
       {
-        title: 'Configurações',
-        url: '/dashboard/checkout/settings',
-        icon: 'settings'
+        title: 'Atividade de Usuários',
+        url: '/dashboard/users/activity',
+        icon: 'activity',
+        isActive: true
       }
     ]
   },
   {
-    title: 'Credenciais',
+    title: 'Segurança e Auditoria',
     url: '#',
-    icon: 'smartphone',
+    icon: 'shield',
     isActive: false,
     items: [
       {
-        title: 'Credenciais Shopify',
-        url: '/dashboard/credentials/shopify-credentials',
-        icon: 'mousePointer'
+        title: 'Logs de Auditoria',
+        url: '/dashboard/security/audit-logs',
+        icon: 'fileText',
+        isActive: true
       },
       {
-        title: 'Credenciais WooCommerce',
-        url: '/dashboard/credentials/buttons',
-        icon: 'mousePointer'
-      },
-      {
-        title: 'Credenciais Wix',
-        url: '/dashboard/credentials/buttons',
-        icon: 'mousePointer'
+        title: 'Logs de Login',
+        url: '/dashboard/security/login-logs',
+        icon: 'logIn',
+        isActive: false
       }
     ]
   },
-
   {
-    title: 'Análises',
-    url: '/dashboard/analytics',
-    icon: 'barChart',
-    isActive: false,
-    shortcut: ['a', 'a'],
-    items: []
-  },
-  {
-    title: 'Marketing',
-    url: '/dashboard/marketing',
-    icon: 'megaphone',
-    isActive: false,
-    shortcut: ['m', 'm'],
-    items: []
-  },
-  {
-    title: 'Usuarios',
-    url: '/dashboard/users',
-    icon: 'megaphone',
-    isActive: false,
-    shortcut: ['m', 'm'],
-    items: []
-  },
-  {
-    title: 'Aplicação',
+    title: 'Links de Pagamento',
     url: '#',
+    icon: 'link',
+    isActive: false,
+    items: [
+      {
+        title: 'Todos os Links',
+        url: '/dashboard/payment-links/all',
+        icon: 'list',
+        isActive: true
+      },
+      {
+        title: 'Botões de Pagamento',
+        url: '/dashboard/payment-links/buttons',
+        icon: 'mousePointer',
+        isActive: true
+      }
+    ]
+  },
+  {
+    title: 'Aplicações',
+    url: '/dashboard/applications',
     icon: 'apps',
     isActive: false,
-    items: [
-      {
-        title: 'Configurações',
-        url: '/apps/123',
-        icon: 'shield'
-      }
-    ]
-  },
-  {
-    title: 'Configurações',
-    url: '#',
-    icon: 'settings',
-    isActive: false,
-    items: [
-      {
-        title: 'Privacidade',
-        url: '/dashboard/settings/privacy',
-        icon: 'shield'
-      },
-      {
-        title: 'Termos e Condições',
-        url: '/dashboard/settings/terms',
-        icon: 'fileText'
-      },
-      {
-        title: 'Configurações Gerais',
-        url: '/dashboard/settings/general',
-        icon: 'settings'
-      }
-    ]
-  },
-  {
-    title: 'Minha Conta',
-    url: '#',
-    icon: 'user',
-    isActive: false,
-    items: [
-      {
-        title: 'Perfil',
-        url: '/dashboard/account/profile',
-        icon: 'userPen'
-      },
-      {
-        title: 'Sair',
-        url: '/logout',
-        icon: 'logOut'
-      }
-    ]
+    items: []
   }
 ];
 export interface SaleUser {
