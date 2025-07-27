@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 39, "column": 0}, "map": {"version":3,"sources":["file:///Users/mac/Documents/GitHub/VOIDpayAdminMVPV3/src/app/page.tsx"],"sourcesContent":["import { auth } from '@clerk/nextjs/server';\nimport { redirect } from 'next/navigation';\n\nexport default async function Page() {\n  const { userId } = await auth();\n\n  if (!userId) {\n    return redirect('/auth/sign-in');\n  } else {\n    redirect('/apps');\n  }\n}\n"],"names":[],"mappings":";;;AAAA;AACA;AAAA;;;AAEe,eAAe;IAC5B,MAAM,EAAE,MAAM,EAAE,GAAG,MAAM,CAAA,GAAA,mLAAA,CAAA,OAAI,AAAD;IAE5B,IAAI,CAAC,QAAQ;QACX,OAAO,CAAA,GAAA,qLAAA,CAAA,WAAQ,AAAD,EAAE;IAClB,OAAO;QACL,CAAA,GAAA,qLAAA,CAAA,WAAQ,AAAD,EAAE;IACX;AACF","debugId":null}}]
-}
