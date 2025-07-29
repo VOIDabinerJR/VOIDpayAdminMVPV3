@@ -172,7 +172,7 @@ export const navItems: NavItem[] = [
     items: [
       {
         title: 'Visão Geral',
-        url: '/dashboard/wallet/overview',
+        url: '/dashboard/overview',
         icon: 'eye',
         isActive: false
       },
